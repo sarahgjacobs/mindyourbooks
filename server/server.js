@@ -1,17 +1,19 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser');
 
-app.get('/api', (req, res) => {
-    res.json({"users": ["userOne", "userTwo", "userThree"]})
-}) 
+app.use(bodyParser.json());
+
+
+
+
 
 app.listen(3001, () => (console.log("Server started")))
 
+app.post('/api/reviews', (req, res) => {
+    const { title, rating, genre } = req.body;
+  });
 
 
 
 
-
-app.get("/*", function (req, res) {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
- })
