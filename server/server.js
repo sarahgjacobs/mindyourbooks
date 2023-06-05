@@ -6,3 +6,12 @@ app.get('/api', (req, res) => {
 }) 
 
 app.listen(3001, () => (console.log("Server started")))
+
+
+
+
+
+
+app.get("/*", function (req, res) {
+    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+ })
